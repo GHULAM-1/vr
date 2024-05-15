@@ -1,25 +1,20 @@
 "use client";
-import "aframe";
-import "aframe-ar";
 
 export default function ARScene() {
   return (
     <div className="flex justify-center items-center">
       <div className="flex justify-center items-center">
         <a-scene
-          webxr="optionalFeatures:  hit-test;"
-          ar-hit-test="target:#myobject;"
+          src="/nissan_skyline_gtr_r35/scene.gltf"
+          webxr="optionalFeatures:hit-test;"
+          ar-hit-test="target:#model;"
+          enabled="true"
+          target="#model"
         >
-          <a-assets>
+          {/* <a-assets>
             <a-asset-item id="model" src="/leninade/scene.gltf"></a-asset-item>
-          </a-assets>
-          <a-entity
-            gltf-model="#model"
-            scale="2 2 2"
-            position="0 0.5 0"
-            animation-mixer
-          ></a-entity>
-          <a-camera-static />
+          </a-assets> */}
+          <a-entity gltf-model="#model"></a-entity>
         </a-scene>
       </div>
     </div>
