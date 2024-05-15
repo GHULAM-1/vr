@@ -27,9 +27,6 @@ export default async function RootLayout({
       <html lang="en" suppressHydrationWarning>
         <body className={inter.className}>{children}</body>
         <Toaster></Toaster>
-
-        <Script src="https://aframe.io/releases/1.3.0/aframe.min.js"></Script>
-        <Script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></Script>
       </html>
     </ClerkProvider>
   );
