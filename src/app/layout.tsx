@@ -28,8 +28,8 @@ export default async function RootLayout({
         <body className={inter.className}>{children}</body>
         <Toaster></Toaster>
 
-        <Script src="https://aframe.io/releases/1.5.0/aframe.min.js"></Script>
-        {/* <Script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></Script> */}
+        <Script src="https://aframe.io/releases/1.3.0/aframe.min.js"></Script>
+        <Script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></Script>
       </html>
     </ClerkProvider>
   );
