@@ -1,17 +1,15 @@
 "use client";
 import "aframe";
 import "aframe-ar";
-import Head from "next/head";
 
 export default function ARScene() {
   return (
     <div className="flex justify-center items-center">
-      <Head>
-        <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-        <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
-      </Head>
       <div className="flex justify-center items-center">
-        <a-scene embedded arjs="trackingMethod: best;">
+        <a-scene
+          webxr="optionalFeatures:  hit-test;"
+          ar-hit-test="target:#myobject;"
+        >
           <a-assets>
             <a-asset-item id="model" src="/leninade/scene.gltf"></a-asset-item>
           </a-assets>
