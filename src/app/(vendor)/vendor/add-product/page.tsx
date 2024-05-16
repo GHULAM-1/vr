@@ -16,22 +16,28 @@ export default async function AddProducts() {
 
   return (
     <>
-      <div>
-        <div>
-          <div>Add products</div>
-          <div>
-            <Dialog>
-              <DialogTrigger>
-                <Button>add products</Button>
-              </DialogTrigger>
-              <DialogContent>
-                <AddProductForm></AddProductForm>
-              </DialogContent>
-            </Dialog>
+      <div className=" p-6 w-full">
+        <div >
+          <div className=" text-5xl font-extrabold flex flex-col justify-center items-center my-2">
+            <div>Add Product</div>
+            <div>
+              <Dialog>
+                <DialogTrigger>
+                  <Button >Add Products</Button>
+                </DialogTrigger>
+                <DialogContent>
+                  <AddProductForm></AddProductForm>
+                </DialogContent>
+              </Dialog>
+            </div>
           </div>
         </div>
 
-        <div className="flex gap-4">
+        <div className="my-4">
+          <div className="text-3xl font-extrabold text-primary">Registered Items</div>
+        </div>
+
+        <div className="flex gap-4 flex-wrap">
           {products.myProducts.map((product: any) => {
             return (
               <ProductCard

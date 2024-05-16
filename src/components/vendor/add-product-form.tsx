@@ -102,7 +102,7 @@ export function AddProductForm() {
           name="isVR"
           render={({ field }) => (
             <FormItem className="space-y-3">
-              <FormLabel>opt for AR experience</FormLabel>
+              <FormLabel>Opt for AR experience</FormLabel>
               <FormControl>
                 <RadioGroup
                   onValueChange={field.onChange}

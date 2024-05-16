@@ -26,12 +26,12 @@ export default async function Sidebar() {
   console.log(res);
   return (
     <>
-      <div className="w-[18vw] h-screen  bg-primary px-4 flex flex-col justify-between">
-        <div className="w-full gap-4 flex justify-center items-center text-left py-10 border-b border-black font-extrabold text-4xl">
+      <div className="w-[18vw] h-screen  bg-primary px-4 flex flex-col justify-between text-white">
+        <div className="w-full gap-4 flex justify-center items-center text-left py-10 border-b border-white font-extrabold text-4xl">
           <span>{res.businessInfo.businessName}</span>
           <Dialog>
             <DialogTrigger>
-              <Pencil className=" "></Pencil>
+              <Pencil className="  "></Pencil>
             </DialogTrigger>
             <DialogContent>
               <BusinessNameForm></BusinessNameForm>
@@ -39,30 +39,30 @@ export default async function Sidebar() {
           </Dialog>
         </div>
 
-        <div className="flex flex-col justify-start items-start gap-3 py-8  h-full">
-          <Link href="/vendor" className="flex justify-start items-start ">
-            <Button className="text-2xl flex gap-4 text-black">
+        <div className="w-full flex flex-col justify-start items-start gap-3 py-8  h-full text-white">
+          <Link href="/vendor" className="flex w-full justify-start items-start ">
+            <Button className="text-2xl flex justify-start w-full gap-4 hover:bg-white hover:text-primary">
               <Home className="h-18 w-18"></Home>
               Home
             </Button>
           </Link>
           <Link
             href="/vendor/add-product"
-            className="flex justify-start items-start bg-red-500 gap-8"
+            className="w-full flex justify-start items-start gap-8"
           >
-            <Button className="text-2xl flex gap-4 text-black">
+            <Button className="text-2xl w-96 flex justify-start gap-4 hover:bg-white hover:text-primary">
               <PlusCircle className="h-18 w-18"></PlusCircle>
-              add product
+              Add Product
             </Button>
           </Link>
 
           <Link
             href="/vendor/see-buyers"
-            className="flex justify-start items-start gap-8"
+            className="flex justify-start w-full items-start gap-8"
           >
-            <Button className="text-2xl flex gap-4 text-black">
+            <Button className="text-2xl w-full flex justify-start gap-4 hover:bg-white hover:text-primary">
               <UserRound className="h-18 w-18"></UserRound>
-              see buyers
+              See Buyers
             </Button>
           </Link>
         </div>
