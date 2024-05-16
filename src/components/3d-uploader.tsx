@@ -34,7 +34,7 @@ export default function DUploader({
 
   const validateFiles = (files: any) => {
     const MAX_PHOTOS = maxPhotos;
-    const MAX_FILE_SIZE = 50 * 1024 * 1024;
+    const MAX_FILE_SIZE = 10 * 1024 * 1024;
 
     if (files.length + addedPhotos.length > MAX_PHOTOS) {
       throw new Error(`You can only upload ${MAX_PHOTOS} photos`);

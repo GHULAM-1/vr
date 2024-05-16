@@ -9,7 +9,10 @@ export default function productAR({
       {/* <div>productID</div>
       <div>{params.productID}</div> */}
       {/* <ThreeARHitTest modelUrl="https://res.cloudinary.com/demo/image/upload/DamagedHelmet3D.glb" /> */}
-      <ThreeARHitTest modelUrl="https://res.cloudinary.com/gamma1199/image/upload/v1715852588/Desk_a6sgmz.glb"></ThreeARHitTest>
+      <ThreeARHitTest
+        modelUrl="https://res.cloudinary.com/dlxtcvj93/raw/upload/v1715854199/rgcgzotbkv6xop3et9xm.glb
+"
+      ></ThreeARHitTest>
     </>
   );
 }

@@ -9,10 +9,11 @@ import { z } from "zod";
 import { revalidatePath } from "next/cache";
 export default async function addProductAction(
   data: z.infer<typeof addProductSchema>,
-  image: string
+  image: string,
+  dmodel: string
 ) {
   try {
-    console.log("data from add products form ", data, image);
+    console.log("data from add products form ", data, image, dmodel);
     const user = await currentUser();
     await connectDB();
     console.log("...............", data.isVR);
@@ -35,6 +36,8 @@ export default async function addProductAction(
             productPrice: data.productPrice,
             productUrl,
             isVR,
+            inCart: false,
+            DModel: dmodel,
           },
         },
       }

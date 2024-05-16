@@ -25,6 +25,7 @@ export function AddProductForm() {
   const [isLoading, setIsLoading] = useState(false);
 
   const [images, setImages] = useState<any>([]);
+  const [Dimages, setDImages] = useState<any>([]);
 
   const form = useForm<z.infer<typeof addProductSchema>>({
     resolver: zodResolver(addProductSchema),
@@ -32,7 +33,7 @@ export function AddProductForm() {
 
   async function onSubmit(data: z.infer<typeof addProductSchema>) {
     setIsLoading(true);
-    const res = await addProductAction(data, images[0]);
+    const res = await addProductAction(data, images[0], Dimages[0]);
     if (!res) {
       toast({
         title: "something went wrong",
@@ -95,7 +96,7 @@ export function AddProductForm() {
           onChange={setImages}
         />
 
-        <DUploader maxPhotos={1} addedPhotos={images} onChange={setImages} />
+        <DUploader maxPhotos={1} addedPhotos={Dimages} onChange={setDImages} />
 
         <FormField
           control={form.control}
