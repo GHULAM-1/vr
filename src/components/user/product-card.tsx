@@ -20,7 +20,7 @@ type ProducCardPropsType = {
   isVR: boolean;
   url: string;
   businessName?: string;
-  productID: string;
+  productID?: string;
 };
 export function ProductCard({
   name,
