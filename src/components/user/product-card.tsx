@@ -1,7 +1,16 @@
 import Image from "next/image";
 import React from "react";
-import { Button } from "../ui/moving-border";
+// import { Button } from "../ui/moving-border";
+import { Button } from "../ui/button";
 import QRCode from "react-qr-code";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 import { CardBody, CardContainer, CardItem } from "../ui/3d-card";
 type ProducCardPropsType = {
@@ -11,6 +20,7 @@ type ProducCardPropsType = {
   isVR: boolean;
   url: string;
   businessName?: string;
+  productID: string;
 };
 export function ProductCard({
   name,
@@ -19,6 +29,7 @@ export function ProductCard({
   isVR,
   url,
   businessName,
+  productID,
 }: ProducCardPropsType) {
   return (
     <CardContainer className="inter-var">
@@ -45,46 +56,45 @@ export function ProductCard({
             alt="thumbnail"
           />
         </CardItem>
-        <div className="flex justify-between items-center mt-10">
-          <CardItem
+        <div className="flex justify-between items-center mt-10 gap-3">
+          {/* <CardItem
             translateZ={20}
             as="button"
             className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
           >
             {price}
-          </CardItem>
+          </CardItem> */}
           {isVR ? (
-            <div>
-              <Button
-                borderRadius="1.75rem"
-                className="bg-white dark:bg-slate-900 text-black dark:text-white border-neutral-200 dark:border-slate-800"
-              >
-                see in AR
-              </Button>
-            </div>
+            <Dialog>
+              <DialogTrigger className="w-full">
+                <Button className="w-full">see in Ar</Button>
+              </DialogTrigger>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>AR Experience</DialogTitle>
+                  <DialogDescription>
+                    Scan the QR code to view this product in AR
+                  </DialogDescription>
+                </DialogHeader>
+                <QRCode
+                  size={256}
+                  style={{ height: "auto", maxWidth: "100%", width: "100%" }}
+                  value={`https://ar-ghulam.vercel.app/user/${productID}`}
+                  viewBox={`0 0 256 256`}
+                />
+              </DialogContent>
+            </Dialog>
           ) : null}
-          <CardItem
+          {/* <CardItem
             translateZ={20}
             as="button"
             className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold"
           >
             {businessName}
+          </CardItem> */}
+          <CardItem className="w-full">
+            <Button className="w-full">add to cart</Button>
           </CardItem>
-          <div
-            style={{
-              height: "auto",
-              margin: "0 auto",
-              maxWidth: 64,
-              width: "100%",
-            }}
-          >
-            <QRCode
-              size={256}
-              style={{ height: "auto", maxWidth: "100%", width: "100%" }}
-              value="https://j7fsz12t-3000.asse.devtunnels.ms/"
-              viewBox={`0 0 256 256`}
-            />
-          </div>
         </div>
       </CardBody>
     </CardContainer>
