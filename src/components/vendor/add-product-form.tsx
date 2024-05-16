@@ -19,6 +19,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { toast } from "@/components/ui/use-toast";
+import DUploader from "../3d-uploader";
 
 export function AddProductForm() {
   const [isLoading, setIsLoading] = useState(false);
@@ -93,6 +94,9 @@ export function AddProductForm() {
           addedPhotos={images}
           onChange={setImages}
         />
+
+        <DUploader maxPhotos={1} addedPhotos={images} onChange={setImages} />
+
         <FormField
           control={form.control}
           name="isVR"

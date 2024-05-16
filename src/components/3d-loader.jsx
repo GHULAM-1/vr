@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { ARButton } from "three/examples/jsm/webxr/ARButton";
@@ -66,7 +67,8 @@ function ThreeARHitTest({ modelUrl }) {
         url,
         (gltf) => {
           model = gltf.scene;
-          model.scale.set(0.01, 0.01, 0.01); // Scale the model down
+          // Increase scale here. Experiment with different values.
+          model.scale.set(1, 1, 1); // Example: Scaling up to natural size
           model.visible = false; // Make model initially invisible
           scene.add(model);
         },

@@ -17,6 +17,8 @@ type myProductsT = {
   productPrice: string;
   productUrl: string;
   isVR: boolean;
+  inCart: boolean;
+  DModel: string;
 };
 
 // schemas
@@ -34,11 +36,13 @@ const myProductsSchema = new Schema<myProductsT>({
   productPrice: String,
   productUrl: String,
   isVR: Boolean,
+  inCart: { type: Boolean, default: false },
+  DModel: { type: String, default: "" },
 });
 
 const userSchema = new Schema<userT>({
   userInfo: userInfoSchema,
-  businessInfo:businessInfoSchema , 
+  businessInfo: businessInfoSchema,
   myProducts: [myProductsSchema],
 });
 
