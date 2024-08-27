@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/dialog";
 
 import { CardBody, CardContainer, CardItem } from "../ui/3d-card";
+import Link from "next/link";
 type ProducCardPropsType = {
   name: string;
   desc: string;
@@ -82,6 +83,9 @@ export function ProductCard({
                   value={`https://ar-ghulam.vercel.app/user/${productID}`}
                   viewBox={`0 0 256 256`}
                 />
+                {/* <Link href={`http://localhost:3000/user/${productID}`}>
+                  clilllll
+                </Link> */}
               </DialogContent>
             </Dialog>
           ) : null}
